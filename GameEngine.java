@@ -16,11 +16,11 @@ public class GameEngine{
 			System.out.print("Your choice:" );
 			int choice = scanner.nextInt();
 
-			if (choice) == "1"{
+			if (choice == 1){
 				newGame();
-			} else if (choice) == "2"{
+			} else if (choice == 2){
 				loadGame();
-			} else if (choice) == "3"{
+			} else if (choice == 3){
 				System.out.println("Exiting game");
 				keepGoing = false;
 			} else {
@@ -54,13 +54,13 @@ public class GameEngine{
 			System.out.print("Your choice: ");
 
 			int choice = scanner.nextInt();
-			if (choice) = "1"{
+			if (choice == 1){
 				explore();
-			} else if (choice) == "2"{
+			} else if (choice == 2){
 				inventoryMenu();
-			} else if (choice) == "3"{
+			} else if (choice == 3){
 				rest();
-			} else if (choice) == "4"{
+			} else if (choice == 4){
 				keepGoing = false;
 			} else {
 				System.out.println("Invalid choice");

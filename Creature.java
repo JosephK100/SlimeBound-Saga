@@ -13,7 +13,7 @@ public abstract class Creature{
 		this.name = name;
 		this.hp = hp;
 		this.attackPower = attackPower;
-		this.defesne = defense;
+		this.defense = defense;
 		this.type = type;
 		this.moveSet = moveSet;
 	}
@@ -22,21 +22,21 @@ public abstract class Creature{
 		return hp > 0;
 	}
 
-	public void take Damage(int amount){
-		int reduced = Math.max(1, amount - defesne);
+	public void takeDamage(int amount){
+		int reduced = Math.max(1, amount - defense);
 		hp -= reduced;
 		if (hp < 0) hp = 0;
-		System.out.println(name + " took " + readuced + " damage!");
+		System.out.println(name + " took " + reduce + " damage!");
 	}
 
 	public void attack(Player p){
 		Move move = moveSet.getRandomMove();
 		int damage = move.getPower();
-		System.out.println(name + " used" + move.getName() + "!");
+		System.out.println(name + " used " + move.getName() + "!");
 		p.takeDamage(damage);
 	}
 	
-	public MoveSet getMove(){
+	public MoveSet getMoves(){
 		return moveSet;
 	}
 
