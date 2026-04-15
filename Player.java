@@ -15,7 +15,7 @@ public class Player{
 		return name;
 	}
 
-	public in getHp(){
+	public int getHp(){
 		return hp;
 	}
 	
@@ -32,7 +32,7 @@ public class Player{
 	publc void takeDamage(int amount){
 		hp -= amount;
 		if (hp < 0) hp = 0;
-		System.out.println(name + " took " + amount " damage!");
+		System.out.println(name + " took " + amount + " damage!");
 	}
 
 	public MoveSet getMoves(){

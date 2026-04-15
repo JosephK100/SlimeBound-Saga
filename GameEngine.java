@@ -72,7 +72,7 @@ public class GameEngine{
 		System.out.println("You explore the forest");
 
 		Slime slime = new Slime();
-		System.out.println("A wild " slime.getName() + " appears!");
+		System.out.println("A wild " + slime.getName() + " appears!");
 		slime.attack(player);
 	}
 
