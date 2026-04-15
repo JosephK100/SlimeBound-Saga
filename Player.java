@@ -29,7 +29,7 @@ public class Player{
 		System.out.println(name + " healed for " + amount  + " HP!");
 	}
 
-	publc void takeDamage(int amount){
+	public void takeDamage(int amount){
 		hp -= amount;
 		if (hp < 0) hp = 0;
 		System.out.println(name + " took " + amount + " damage!");
