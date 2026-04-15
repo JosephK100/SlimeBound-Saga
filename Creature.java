@@ -26,7 +26,7 @@ public abstract class Creature{
 		int reduced = Math.max(1, amount - defense);
 		hp -= reduced;
 		if (hp < 0) hp = 0;
-		System.out.println(name + " took " + reduce + " damage!");
+		System.out.println(name + " took " + reduced + " damage!");
 	}
 
 	public void attack(Player p){
