@@ -1,7 +1,7 @@
 # SlimeBound-Saga
 Slime fighter game - Final project for CS 2
 
-```
+```mermaid
 classDiagram
     class GameEngine {
         +startGame()
