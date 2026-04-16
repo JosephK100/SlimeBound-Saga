@@ -73,7 +73,14 @@ public class GameEngine{
 		Slime slime = new Slime();
 		battle(slime);
 	}
-
+	
+	//Tried to implement an HP bar to make it more immersive. Found these cool symbols which look great.
+	private String hpBar(int current, int max){
+		int totalBars = 10;
+		double ratio = current / (double) max;
+		int filled = (int)(ratio * totalBars);
+		return "[" + "█".repeat(filled) + "░".repeat(totalBars - filled) + "] " + current + "/" + max + " HP";
+	}
 	//Battle
 	private void battle(Creature wild){
     	Creature ally = player.getActiveSlime();
@@ -90,11 +97,18 @@ public class GameEngine{
 			System.out.println(enemyName + " took " + slimeMove.getPower() + " damage!");
 			pressEntertoContinue();
 
+			//HP bars!
+			System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
+			System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
+
         	if (wild.isAlive()){
 				System.out.println("\n--- Your Attack ---");
             	int dmg = player.randomAttack();
             	wild.takeDamage(dmg);
 				System.out.println(enemyName + " took " + dmg + " damage!");
+				
+				System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
+				System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
 				pressEntertoContinue();
 
             	if (wild.isAlive()){
@@ -103,6 +117,9 @@ public class GameEngine{
                 	System.out.println(enemyName + " used " + enemyMove.getName() + "!");
                 	ally.takeDamage(enemyMove.getPower());
 					System.out.println(allyName + " took " + enemyMove.getPower() + " damage!");
+					
+					System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
+					System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
 					pressEntertoContinue();
 
                 	if (ally.isAlive()){

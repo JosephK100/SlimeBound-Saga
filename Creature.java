@@ -8,6 +8,7 @@ public abstract class Creature{
 	protected int defense;
 	protected ElementalType type;
 	protected MoveSet moveSet;
+	protected int maxHp;
 
 	public Creature(String name, int hp, int attackPower, int defense, ElementalType type, MoveSet moveSet){
 		this.name = name;
@@ -16,7 +17,7 @@ public abstract class Creature{
 		this.defense = defense;
 		this.type = type;
 		this.moveSet = moveSet;
-	}
+		this.maxHp = hp;
 
 	public boolean isAlive(){
 		return hp > 0;
@@ -49,5 +50,10 @@ public abstract class Creature{
 
 	public ElementalType getType(){
 		return type;
+	}
+
+	public int getMaxHp(){
+		return maxHp;
+
 	}
 }
