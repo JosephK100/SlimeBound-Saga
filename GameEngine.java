@@ -77,30 +77,30 @@ public class GameEngine{
 	//Battle
 	private void battle(Creature wild){
     	Creature ally = player.getActiveSlime();
-		String allyName = "Your " + allyName();
-		String enemyName = "Enemy " + enemyName();
-    	System.out.println("A wild " + enemyName() + " appears!");
+		String allyName = "Your " + ally.getName();
+		String enemyName = "Enemy " + enemy.getName();
+    	System.out.println("A wild " + enemyName + " appears!");
 		pressEntertoContinue();
 
     	while (ally.isAlive() && wild.isAlive()){
         	Move slimeMove = ally.getMoves().getRandomMove();
 			System.out.println("\n--- Ally Turn ---");
-        	System.out.println(allyName() + " used " + slimeMove.getName() + "!");
+        	System.out.println(allyName + " used " + slimeMove.getName() + "!");
         	wild.takeDamage(slimeMove.getPower());
-			System.out.println(enemyName + " took " slimeMove.getPower() + " damage!");
+			System.out.println(enemyName + " took " + limeMove.getPower() + " damage!");
 			pressEntertoContinue();
 
         	if (wild.isAlive()){
 				System.out.println("\n--- Your Attack ---");
             	int dmg = player.randomAttack();
             	wild.takeDamage(dmg);
-				System.out.println(enemyName + " took ") dmg + " damage!");
+				System.out.println(enemyName + " took " + dmg + " damage!");
 				pressEntertoContinue();
 
             	if (wild.isAlive()){
 					System.out.println("\n--- Enemy Turn ---");
                 	Move enemyMove = wild.getMoves().getRandomMove();
-                	System.out.println(enemyName() + " used " + enemyMove.getName() + "!");
+                	System.out.println(enemyName + " used " + enemyMove.getName() + "!");
                 	ally.takeDamage(enemyMove.getPower());
 					System.out.println(allyName + " took " + enemyMove.getPower() + " damage!");
 					pressEntertoContinue();
@@ -114,10 +114,10 @@ public class GameEngine{
     	}
 
     	if (!wild.isAlive()){
-        	System.out.println("You defeated the " + enemyName() + "!");
+        	System.out.println("You defeated the " + enemyName + "!");
 			pressEntertoContinue();
     }	 else if (!ally.isAlive()){
-        	System.out.println(allyName() + " fainted");
+        	System.out.println(allyName + " fainted");
 			pressEntertoContinue();
     	}
 	}
