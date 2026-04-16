@@ -72,9 +72,9 @@ public class Player{
 				System.out.println(name + " casts a spell!");
 				return spellAttack();
 			case 1:
-				System.out.println(name + " swings thier sword !");
+				System.out.println(name + " swings their sword!");
 				return swordAttack();
-			case 2: System.out.println(name + "shoots an arrow!");
+			case 2: System.out.println(name + " shoots an arrow!");
 				return bowAttack();
 		}
 		//Just in case
