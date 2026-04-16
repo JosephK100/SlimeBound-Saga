@@ -95,7 +95,7 @@ public class GameEngine{
         	System.out.println(allyName + " used " + slimeMove.getName() + "!");
 
 			int dealt = wild.takeDamage(slimeMove.getPower());
-			System.out.println(enemyName + " took " + slimeMove.getPower() + " damage!");
+			System.out.println(enemyName + " took " + dealt + " damage!");
 			
 			System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
 			System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
@@ -106,7 +106,7 @@ public class GameEngine{
 				System.out.println("\n--- Your Attack ---");
             	int dmg = player.randomAttack();
             	int dealt2 = wild.takeDamage(dmg);
-				System.out.println(enemyName + " took " + dmg + " damage!");
+				System.out.println(enemyName + " took " + dealt2 + " damage!");
 				System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
 				System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
 				pressEntertoContinue();
@@ -116,7 +116,7 @@ public class GameEngine{
                 	Move enemyMove = wild.getMoves().getRandomMove();
                 	System.out.println(enemyName + " used " + enemyMove.getName() + "!");
                 	int dealt3 = ally.takeDamage(enemyMove.getPower());
-					System.out.println(allyName + " took " + enemyMove.getPower() + " damage!");
+					System.out.println(allyName + " took " + dealt3 + " damage!");
 					
 					System.out.println(allyName + " " + hpBar(ally.getHp(), ally.getMaxHp()));
 					System.out.println(enemyName + " " + hpBar(wild.getHp(), wild.getMaxHp()));
