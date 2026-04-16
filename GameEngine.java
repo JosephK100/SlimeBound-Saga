@@ -77,20 +77,24 @@ public class GameEngine{
 	//Battle
 	private void battle(Creature wild){
     	Creature ally = player.getActiveSlime();
+		String allyName = "Your " + ally.getName();
+		String enemyName = "Enemy " + wild.getName();
     	System.out.println("A wild " + wild.getName() + " appears!");
 		pressEntertoContinue();
 
     	while (ally.isAlive() && wild.isAlive()){
         	Move slimeMove = ally.getMoves().getRandomMove();
-			System.out.println("\n--- Your Slime's Turn ---");
+			System.out.println("\n--- Ally Turn ---");
         	System.out.println(ally.getName() + " used " + slimeMove.getName() + "!");
         	wild.takeDamage(slimeMove.getPower());
+			System.out.println(enemyName + " took " slimeMove.getPower() + " damage!");
 			pressEntertoContinue();
 
         	if (wild.isAlive()){
 				System.out.println("\n--- Your Attack ---");
             	int dmg = player.randomAttack();
             	wild.takeDamage(dmg);
+				System.out.println(enemyName + " took ") dmg + " damage!");
 				pressEntertoContinue();
 
             	if (wild.isAlive()){
@@ -98,10 +102,12 @@ public class GameEngine{
                 	Move enemyMove = wild.getMoves().getRandomMove();
                 	System.out.println(wild.getName() + " used " + enemyMove.getName() + "!");
                 	ally.takeDamage(enemyMove.getPower());
+					System.out.println(allyName + " took " + enemyMove.getPower() + " damage!");
 					pressEntertoContinue();
 
                 	if (ally.isAlive()){
                     	System.out.println("\n--- Next Turn ---");
+						pressEntertoContinue();
                 	}
             	}
         	}
