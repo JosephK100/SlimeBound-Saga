@@ -1,5 +1,9 @@
 //Main game engine (Will handle all menus)
 import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameEngine{
 	private Scanner scanner = new Scanner(System.in);
@@ -38,10 +42,6 @@ public class GameEngine{
 		player = new Player(name);
 		System.out.println("Welcome, " + name + "!");
 		mainMenu();
-	}
-
-	private void loadGame(){
-		System.out.println("Loading game.");
 	}
 
 	private void mainMenu(){
