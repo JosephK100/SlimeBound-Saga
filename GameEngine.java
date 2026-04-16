@@ -70,8 +70,19 @@ public class GameEngine{
 
 	private void explore(){
 		System.out.println("You explore the forest");
-		Slime slime = new Slime();
-		battle(slime);
+		Creature wild = randomWildCreature();
+		battle(wild);
+	}
+
+	private Creature randomWildCreature(){
+		int roll = (int)(Math.random() * 4);
+		switch (roll){
+			case 0: return new Slime();
+			case 1: return new FireSlime();
+			case 2: return new WaterSlime();
+			case 3: return new AirSlime();
+			case 4: return new Slime();
+		}
 	}
 	
 	//Tried to implement an HP bar to make it more immersive. Found these cool symbols which look great.

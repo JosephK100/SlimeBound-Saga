@@ -17,4 +17,33 @@ public class MoveSet{
 		}
 		return moves.get(rand.nextInt(moves.size()));
 	}
+
+	//New moves for the other slimes ;3
+	public static MoveSet basicSlimeMoves(){
+		MoveSet set = new MoveSet();
+		set.addMove(new Move("Smack", 4));
+		set.addMove(new Move("Mud Bomb", 6));
+		return set;
+	}
+
+	public static MoveSet fireSlimeMoves(){
+		MoveSet set = new MoveSet();
+		set.addMove(new Move("Fire Ball", 5));
+		set.addMove(new Move("Fire Storm", 7));
+		return set;
+	}
+
+	public static MoveSet waterSlimeMoves(){
+		MoveSet set = new MoveSet();
+		set.addMove(new Move("Splash", 4));
+		set.addMove(new Move("Jet Blast", 6));
+		return set;
+	}
+
+	public static MoveSet airSlimeMove(){
+		MoveSet set = new MoveSet();
+		set.addMove(new Move("Gust", 5));
+		set.addMove(new Move("Typhoon", 7));
+		return set;
+	}
 }
