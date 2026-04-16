@@ -43,7 +43,6 @@ public class Player{
 	public void takeDamage(int amount){
 		hp -= amount;
 		if (hp < 0) hp = 0;
-		System.out.println(name + " took " + amount + " damage!");
 	}
 
 	public MoveSet getMoves(){
