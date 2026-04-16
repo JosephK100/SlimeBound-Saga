@@ -175,6 +175,26 @@ classDiagram
     If the enemy fainted, increase the battles won counter and reward items if needed.
     If the ally fainted, display faint message.
 
+-InventoryMenu()
+    Display the player's current inventory contents.
+    Show options for using a Potion, using a Large Potion, or returning to the previous menu.
+    Read the player's choice.
+    If potion is chosen, try to heal the active slime for 20 HP.
+    If a Large Potion is chosen, try to heal the active slime for 50 HP.
+    If the palyer has no Potions, display an error message. 
+    Return to the main menu after an action.
+
+-Rest- 
+    Get the player's active slime.
+    If the slime is fainted, revive it with 10 HP.
+    If the slime is alive, heal it by 10 HP.
+    Display the respective message depending on the slimes condition. 
+
+-RandomAttack-
+    Generate a random number between 0 and the number of attacks the object can perform.
+    Baesed on the number, choose one of the object's attacks. Display a message describing the attack. 
+    Return the damage value for that attack. 
+
 -Save Game-
     Display a message informing the palyer that the game is saving (Not working currently)
     Open a file called "save.dat" for writing.
@@ -188,5 +208,18 @@ classDiagram
     Replace the current player with the loaded one.
     Move the player into the main menu.
     Display an error message if saving/loading fails. 
-     
+
+-Use-Case Analysis-
+    User: Anyone palying rhe who wants a simple turn-based RPG experience.
+    Goal: To "explore" the world and battle wild slimes, manage items, and progress through the small game loop.
+    Actions: Choose menu options, fight enemies, heal thier slime, rest, save progress, and load previous saves.
+    Outcome: The player experiences a light RPG system with battles, items, and progression through repeated encounters. 
+
+-Compilation Instructions-
+    javac *.java
+    java GameEngine 
+
+-Makefile-
+    javac *.java
+    java GameEngine
 ```
