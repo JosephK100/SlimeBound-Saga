@@ -40,7 +40,7 @@ public class MoveSet{
 		return set;
 	}
 
-	public static MoveSet airSlimeMove(){
+	public static MoveSet airSlimeMoves(){
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Gust", 5));
 		set.addMove(new Move("Typhoon", 7));
