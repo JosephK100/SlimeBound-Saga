@@ -86,27 +86,22 @@ public class GameEngine{
 			wild.takeDamage(slimeMove.getDamage());
 
 			if (wild.isAlive()){
-				//Nothing
-			} else {
 				int dmg = player.randomAttacj();
 				wild.takeDamage(dmg);
 
-				if (wild.isAlive(){
-					//Nothing
-				} else {
+				if (wild.isAlive(
 					Move enemyMove = wild.getMoves().getRandomMove();
-					System.out.println(wild.getName() + " used " + enemyMove.getName() + "!");
-			
+					System.out.println(wild.getName() + " used " + enemyMove.getName() + "!")
 			if (ally.isAlive()){
-				//Nothing
-			} else {
 				System.out.println("\n--- Next Turn ---");
+			}
+			}
+		}
+	}
 
 			if (!wild.isALive()){
 				System.out.println("You defeated the " + wild.getName() + "!");
-			}
-			}
-				}
+
 			} else if (!ally.isAlive()){
 				System.out.println(ally.getName() + "fainted");
 			}
