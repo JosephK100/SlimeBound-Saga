@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class GameEngine{
 	private Scanner scanner = new Scanner(System.in);
 	private Player player;
+	private static int battlesWon = 0;
 	
 	//Use keepGoing to keep my menu looping 
 	public void startGame(){
@@ -143,6 +144,11 @@ public class GameEngine{
 
     	if (!wild.isAlive()){
         	System.out.println("You defeated the " + enemyName + "!");
+			battlesWon++;
+			if (battlesWon == 3){
+				player.getInventory().addLargePotion();
+				System.out.println("You recieved a Large Potion!");
+			}
 			pressEntertoContinue();
     }	 else if (!ally.isAlive()){
         	System.out.println(allyName + " fainted");
@@ -171,7 +177,7 @@ public class GameEngine{
 		int choice = scanner.nextInt();
 		scanner.nextLine();
 
-		Creature slime= player.getActiveSlime();
+		Creature slime = player.getActiveSlime();
 
 		if (choice == 1){
 			if (inv.usePotion(slime)){
@@ -187,16 +193,7 @@ public class GameEngine{
 		}
 		//Continue 
 		pressEntertoContinue();
-
-		//Rewards for winning battles (potions)
-		static int battlesWon = 0;
-		if (!wild.isAlive()){
-			battlesWont++;
-			if (battlesWon == 3){
-				player.getInventory().addLargePotion();
-				System.out.println("You received a Large Potion!");
-			}
-		}
+	}
 
 	private void rest(){
 		System.out.println("Rest button clicked");

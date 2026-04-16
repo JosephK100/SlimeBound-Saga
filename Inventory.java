@@ -1,5 +1,6 @@
 //Inventory.java
-import class Inventory implements Serializable{
+import java.io.Serializable;
+public class Inventory implements Serializable{
     private int potions = 1;
     private int largePotions = 0;
 
@@ -7,7 +8,20 @@ import class Inventory implements Serializable{
         largePotions++;
     }
 
-    public boolean useLargePotion(Creatrue slime){
+    public void addLargePotion(){
+        largePotions++;
+    }
+
+    public boolean usePotion(Creature slime){
+        if (potion > 0){
+            potions--;
+            slime.heal(20);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean useLargePotion(Creature slime){
         if (largePotions > 0){
             largePotions--;
             slime.heal(50);
