@@ -14,7 +14,7 @@ public class GameEngine{
 			System.out.println("1. Start Game");
 			System.out.println("2. Load Game");
 			System.out.println("3. Quit");
-			System.out.print("Your choice:" );
+			System.out.print("Your choice: " );
 			int choice = scanner.nextInt();
 
 			if (choice == 1){

@@ -33,5 +33,7 @@ public class Inventory implements Serializable{
     public void printInventory(){
         System.out.println("Potions: " + potions);
         System.out.print("Large Potions: " + largePotions);
+        System.out.println(); //For spacing and formatting.
+        System.out.println();
     }
 }
