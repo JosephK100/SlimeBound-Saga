@@ -38,5 +38,36 @@ public class Player{
 	public MoveSet getMoves(){
 		return moveSet;
 	}
+	
+	//My idea is to have a random seocndary attack from the player alongside thier slime.
+	public int spellAttack(){
+		return 8;
+	}
+
+	public int SwordAttack(){
+		return 5;
+	}
+
+	public int bowAttack(){
+		return 6;
+	}
+
+	public int randomAttack(){
+		Random rand = new Random();
+		int choice = rand.nextInt(3);
+
+		switch(choice){
+			case 0:
+				System,out.printlln(name + " casts a spell!");
+				return spellAttack();
+			case 1:
+				System.out.println(name + " swings thier sword !");
+				return swordAttack();
+			case 2: System.out.println(name + "shoots an arrow!");
+				return bowAttack();
+		}
+		//Just in case
+		return bowAttack();
+	}
 }
 
