@@ -85,4 +85,9 @@ public class GameEngine{
 		player.heal(10);
 		//maybe the player should only be able to rest every 25 seconds or so to prevent spam resting
 	}
+	
+	public static void main(String[] args){
+		GameEngine engine = new GameEngine();
+		engine.startGame();
+	}
 }
