@@ -77,37 +77,39 @@ public class GameEngine{
 	}
 
 	//Battle
+	//Battle
 	private void battle(Creature wild){
-		Creature ally = player.getActiveSlime();
-		System.out.println("A wild " + wild.getName() + " appears!");
-		while (ally.isAlive() && wild.isAlive()){
-			Move slimeMove = ally.getMoves().getRandomMove();
-			System.out.println(ally.getName() + " used " + slimeMove.getName() + "!");
-			wild.takeDamage(slimeMove.getDamage());
+    	Creature ally = player.getActiveSlime();
+    	System.out.println("A wild " + wild.getName() + " appears!");
 
-			if (wild.isAlive()){
-				int dmg = player.randomAttack();
-				wild.takeDamage(dmg);
+    	while (ally.isAlive() && wild.isAlive()){
+        	Move slimeMove = ally.getMoves().getRandomMove();
+        	System.out.println(ally.getName() + " used " + slimeMove.getName() + "!");
+        	wild.takeDamage(slimeMove.getDamage());
 
-				if (wild.isAlive){
-					Move enemyMove = wild.getMoves().getRandomMove();
-					System.out.println(wild.getName() + " used " + enemyMove.getName() + "!")
-					ally.takeDamage(enemyMove.getDamag());
-			
-				if (ally.isAlive()){
-					System.out.println("\n--- Next Turn ---")
-				}
-			}
-		}
+        	if (wild.isAlive()){
+            	int dmg = player.randomAttack();
+            	wild.takeDamage(dmg);
+
+            	if (wild.isAlive()){
+                	Move enemyMove = wild.getMoves().getRandomMove();
+                	System.out.println(wild.getName() + " used " + enemyMove.getName() + "!");
+                	ally.takeDamage(enemyMove.getDamage());
+
+                	if (ally.isAlive()){
+                    	System.out.println("\n--- Next Turn ---");
+                	}
+            	}
+        	}
+    	}
+
+    	if (!wild.isAlive()){
+        	System.out.println("You defeated the " + wild.getName() + "!");
+    }	 else if (!ally.isAlive()){
+        	System.out.println(ally.getName() + " fainted");
+    	}
 	}
 
-			if (!wild.isAlive()){
-				System.out.println("You defeated the " + wild.getName() + "!");
-
-			} else if (!ally.isAlive()){
-				System.out.println(ally.getName() + "fainted");
-			}
-}
 
 	private void inventoryMenu(){
 		System.out.println("Inventory button clicked");
