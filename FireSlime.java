@@ -1,4 +1,5 @@
 //Fire slime 
+import java.io.Serializable;
 
 public class FireSlime extends Creature implements Serializable{
     public FireSlime(){
