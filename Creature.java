@@ -18,6 +18,7 @@ public abstract class Creature{
 		this.type = type;
 		this.moveSet = moveSet;
 		this.maxHp = hp;
+	}
 
 	public boolean isAlive(){
 		return hp > 0;
