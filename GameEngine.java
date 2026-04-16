@@ -89,10 +89,10 @@ public class GameEngine{
 				int dmg = player.randomAttack();
 				wild.takeDamage(dmg);
 
-				if (wild.isAlive(
+				if (wild.isAlive){
 					Move enemyMove = wild.getMoves().getRandomMove();
 					System.out.println(wild.getName() + " used " + enemyMove.getName() + "!")
-					ally.takeDamage(enemyMove.getDamage -- xyz
+					ally.takeDamage(enemyMove.getDamag());
 			
 				if (ally.isAlive()){
 					System.out.println("\n--- Next Turn ---")
@@ -101,7 +101,7 @@ public class GameEngine{
 		}
 	}
 
-			if (!wild.isALive()){
+			if (!wild.isAlive()){
 				System.out.println("You defeated the " + wild.getName() + "!");
 
 			} else if (!ally.isAlive()){
