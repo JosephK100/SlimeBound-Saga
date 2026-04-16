@@ -24,10 +24,11 @@ public abstract class Creature{
 		return hp > 0;
 	}
 
-	public void takeDamage(int amount){
+	public int takeDamage(int amount){
 		int reduced = Math.max(1, amount - defense);
 		hp -= reduced;
 		if (hp < 0) hp = 0;
+		return reduced;
 	}
 
 	public void attack(Player p){
