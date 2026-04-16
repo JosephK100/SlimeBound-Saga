@@ -4,13 +4,23 @@ public class Player{
 	private String name;
 	private int hp;
 	private MoveSet moveSet;
+	private Creature activeSlime;
 	
 	public Player(String name){
 		this.name = name;
 		this.hp = 100; //Testing out 100 hp as a baseline.
 		this.moveSet = new MoveSet();
+		this.activeSlime = new Slime();
 	}
 	
+	public Creature getActiveSlime(){
+		return activeSlime;
+	}
+
+	public void setActiveSlime(Creature slime){
+		this.activeSlime = slime;
+	}
+
 	public String getName(){
 		return name;
 	}
