@@ -152,6 +152,9 @@ public class GameEngine{
 
 	private void pressEntertoContinue(){
 		System.out.println("\n(Press Enter to continue)");
+		if (scanner.hasNextLine()){
+			scanner.nextLine();
+		}
 		scanner.nextLine();
 	}
 
