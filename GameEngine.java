@@ -159,8 +159,44 @@ public class GameEngine{
 	}
 
 	private void inventoryMenu(){
-		System.out.println("Inventory button clicked");
-	}
+		System.out.println("\n--- Inventory ---");
+		Inventory inv = player.getInventory();
+		inv.printInventory();
+
+		System.out.println("1. Use Potion (+20 HP)");
+		System.out.println("2. Use Large Potion (+50 HP)");
+		System.out.println("3. Back");
+
+		System.out.print("Your choice: ");
+		int choice = scanner.nextInt();
+		scanner.nextLine();
+
+		Creature slime= player.getActiveSlime();
+
+		if (choice == 1){
+			if (inv.usePotion(slime)){
+				System.out.println("Your Slime has recovered 20 HP!");
+			} else { System.out.println("You have no potions.");
+			}
+		} else if (choice == 2){
+			if (inv.useLargePotion(slime)){
+				System.out.println("Your slime has recovered 50 HP!");
+			} else {
+				System.out.println("You have no large potions.");
+			}
+		}
+		//Continue 
+		pressEntertoContinue();
+
+		//Rewards for winning battles (potions)
+		static int battlesWon = 0;
+		if (!wild.isAlive()){
+			battlesWont++;
+			if (battlesWon == 3){
+				player.getInventory().addLargePotion();
+				System.out.println("You received a Large Potion!");
+			}
+		}
 
 	private void rest(){
 		System.out.println("Rest button clicked");

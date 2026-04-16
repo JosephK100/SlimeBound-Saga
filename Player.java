@@ -6,7 +6,8 @@ public class Player{
 	private int hp;
 	private MoveSet moveSet;
 	private Creature activeSlime;
-	
+	private Inventory inventory = new Inventory();
+
 	public Player(String name){
 		this.name = name;
 		this.hp = 100; //Testing out 100 hp as a baseline.
@@ -78,6 +79,10 @@ public class Player{
 		}
 		//Just in case
 		return bowAttack();
+	}
+	
+	public Inventory getInventory(){
+		return inventory;
 	}
 }
 
