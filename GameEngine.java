@@ -86,15 +86,17 @@ public class GameEngine{
 			wild.takeDamage(slimeMove.getDamage());
 
 			if (wild.isAlive()){
-				int dmg = player.randomAttacj();
+				int dmg = player.randomAttack();
 				wild.takeDamage(dmg);
 
 				if (wild.isAlive(
 					Move enemyMove = wild.getMoves().getRandomMove();
 					System.out.println(wild.getName() + " used " + enemyMove.getName() + "!")
-			if (ally.isAlive()){
-				System.out.println("\n--- Next Turn ---");
-			}
+					ally.takeDamage(enemyMove.getDamage -- xyz
+			
+				if (ally.isAlive()){
+					System.out.println("\n--- Next Turn ---")
+				}
 			}
 		}
 	}
@@ -105,7 +107,7 @@ public class GameEngine{
 			} else if (!ally.isAlive()){
 				System.out.println(ally.getName() + "fainted");
 			}
-		}
+}
 
 	private void inventoryMenu(){
 		System.out.println("Inventory button clicked");
