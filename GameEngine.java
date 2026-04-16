@@ -161,8 +161,14 @@ public class GameEngine{
 
 	private void rest(){
 		System.out.println("Rest button clicked");
-		player.heal(10);
-		//maybe the player should only be able to rest every 25 seconds or so to prevent spam resting
+		Creature slime = player.getActiveSlime();
+		if (!slime.isAlive()){
+			slime.heal(10);
+			System.out.println("Your Slime was revived");
+		} else { 
+			slime.heal(10);
+			System.out.println("Your Slime healed for 10 HP!");
+		}
 	}
 	
 	public static void main(String[] args){

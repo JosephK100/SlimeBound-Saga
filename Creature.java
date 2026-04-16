@@ -58,4 +58,11 @@ public abstract class Creature{
 		return maxHp;
 
 	}
+
+	public void heal(int amount){
+		hp += amount;
+		if(hp > maxHp){
+			hp = maxHp;
+		}
+	}
 }
