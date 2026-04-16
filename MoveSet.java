@@ -1,9 +1,9 @@
 //MoveSet.java
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MoveSet{
+public class MoveSet implements Serializable{
 	private ArrayList<Move> moves = new ArrayList<>();
 	private Random rand = new Random();
 

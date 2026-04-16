@@ -1,6 +1,7 @@
 //Slime.java (Test)
+import java.io.Serializable;
 
-public class Slime extends Creature{
+public class Slime extends Creature implements Serializable{
 	
 	public Slime(){
 		super(

@@ -1,6 +1,7 @@
 //Creature.java
+import java.io.Serializable;
 
-public abstract class Creature{
+public abstract class Creature implements Serializable{
 	//Protected instead of private to make inheritence easier
 	protected String name;
 	protected int hp;

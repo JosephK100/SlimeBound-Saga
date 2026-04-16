@@ -51,7 +51,8 @@ public class GameEngine{
 			System.out.println("1. Explore");
 			System.out.println("2. Inventory");
 			System.out.println("3. Rest");
-			System.out.println("4. Quit to Start Menu");
+			System.out.println("4. Save Game");
+			System.out.println("5. Quit to Start Menu");
 			System.out.print("Your choice: ");
 
 			int choice = scanner.nextInt();
@@ -62,8 +63,9 @@ public class GameEngine{
 			} else if (choice == 3){
 				rest();
 			} else if (choice == 4){
+				saveGame();
+			} else if (choice == 5){
 				keepGoing = false;
-			} else {
 				System.out.println("Invalid choice");
 			}
 		}
@@ -206,9 +208,29 @@ public class GameEngine{
 			System.out.println("Your Slime healed for 10 HP!");
 		}
 	}
-	
+	//Saving/Loading game
+	private void saveGame(){
+    	try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.dat"))){
+        	out.writeObject(player);
+       	 	System.out.println("Game saved successfully!");
+    	} catch (Exception e) {
+        	System.out.println("Error saving game: " + e.getMessage());
+    }
+	}
+
+	private void loadGame(){
+    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("save.dat"))){
+        player = (Player) in.readObject();
+        System.out.println("Game loaded successfully!");
+        mainMenu();
+    } catch (Exception e){
+        System.out.println("No save file found or error loading game.");
+    }
+	}
+
 	public static void main(String[] args){
 		GameEngine engine = new GameEngine();
 		engine.startGame();
 	}
 }
+

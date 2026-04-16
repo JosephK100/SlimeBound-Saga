@@ -1,6 +1,7 @@
 //Move.java
+import java.io.Serializable;
 
-public class Move{
+public class Move implements Serializable{
 	private String name;
 	private int power;
 
