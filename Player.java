@@ -69,7 +69,7 @@ public class Player{
 
 		switch(choice){
 			case 0:
-				System.out.printlln(name + " casts a spell!");
+				System.out.println(name + " casts a spell!");
 				return spellAttack();
 			case 1:
 				System.out.println(name + " swings thier sword !");
