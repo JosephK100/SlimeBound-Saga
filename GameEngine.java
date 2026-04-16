@@ -78,7 +78,7 @@ public class GameEngine{
 	private void battle(Creature wild){
     	Creature ally = player.getActiveSlime();
 		String allyName = "Your " + ally.getName();
-		String enemyName = "Enemy " + enemy.getName();
+		String enemyName = "Enemy " + wild.getName();
     	System.out.println("A wild " + enemyName + " appears!");
 		pressEntertoContinue();
 
@@ -87,7 +87,7 @@ public class GameEngine{
 			System.out.println("\n--- Ally Turn ---");
         	System.out.println(allyName + " used " + slimeMove.getName() + "!");
         	wild.takeDamage(slimeMove.getPower());
-			System.out.println(enemyName + " took " + limeMove.getPower() + " damage!");
+			System.out.println(enemyName + " took " + slimeMove.getPower() + " damage!");
 			pressEntertoContinue();
 
         	if (wild.isAlive()){
