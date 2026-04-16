@@ -75,24 +75,30 @@ public class GameEngine{
 	}
 
 	//Battle
-	//Battle
 	private void battle(Creature wild){
     	Creature ally = player.getActiveSlime();
     	System.out.println("A wild " + wild.getName() + " appears!");
+		pressEntertoContinue();
 
     	while (ally.isAlive() && wild.isAlive()){
         	Move slimeMove = ally.getMoves().getRandomMove();
+			System.out.println("\n--- Your Slime's Turn ---")
         	System.out.println(ally.getName() + " used " + slimeMove.getName() + "!");
         	wild.takeDamage(slimeMove.getPower());
+			pressEntertoContinue();
 
         	if (wild.isAlive()){
+				System.out.println("\n--- Your Attack ---")
             	int dmg = player.randomAttack();
             	wild.takeDamage(dmg);
+				pressEntertoContinue();
 
             	if (wild.isAlive()){
+					System.out.println("\n--- Enemy Turn ---")
                 	Move enemyMove = wild.getMoves().getRandomMove();
                 	System.out.println(wild.getName() + " used " + enemyMove.getName() + "!");
                 	ally.takeDamage(enemyMove.getPower());
+					pressEntertoContinue();
 
                 	if (ally.isAlive()){
                     	System.out.println("\n--- Next Turn ---");
@@ -103,11 +109,17 @@ public class GameEngine{
 
     	if (!wild.isAlive()){
         	System.out.println("You defeated the " + wild.getName() + "!");
+			pressEntertoContinue();
     }	 else if (!ally.isAlive()){
         	System.out.println(ally.getName() + " fainted");
+			pressEntertoContinue();
     	}
 	}
 
+	private void pressEntertoContinue(){
+		System.out.println("\n(Press Enter to continue)");
+		scanner.nextLine();
+	}
 
 	private void inventoryMenu(){
 		System.out.println("Inventory button clicked");
