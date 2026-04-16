@@ -70,8 +70,6 @@ public class GameEngine{
 
 	private void explore(){
 		System.out.println("You explore the forest");
-
-		Slime slime = new Slime();
 		Slime slime = new Slime();
 		battle(slime);
 	}
@@ -85,7 +83,7 @@ public class GameEngine{
     	while (ally.isAlive() && wild.isAlive()){
         	Move slimeMove = ally.getMoves().getRandomMove();
         	System.out.println(ally.getName() + " used " + slimeMove.getName() + "!");
-        	wild.takeDamage(slimeMove.getDamage());
+        	wild.takeDamage(slimeMove.getPower());
 
         	if (wild.isAlive()){
             	int dmg = player.randomAttack();
@@ -94,7 +92,7 @@ public class GameEngine{
             	if (wild.isAlive()){
                 	Move enemyMove = wild.getMoves().getRandomMove();
                 	System.out.println(wild.getName() + " used " + enemyMove.getName() + "!");
-                	ally.takeDamage(enemyMove.getDamage());
+                	ally.takeDamage(enemyMove.getPower());
 
                 	if (ally.isAlive()){
                     	System.out.println("\n--- Next Turn ---");

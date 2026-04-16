@@ -1,4 +1,5 @@
 //Player.java
+import java.util.Random;
 
 public class Player{
 	private String name;
@@ -49,12 +50,12 @@ public class Player{
 		return moveSet;
 	}
 	
-	//My idea is to have a random seocndary attack from the player alongside thier slime.
+	//My idea is to have a random secondary attack from the player alongside thier slime.
 	public int spellAttack(){
 		return 8;
 	}
 
-	public int SwordAttack(){
+	public int swordAttack(){
 		return 5;
 	}
 
@@ -68,7 +69,7 @@ public class Player{
 
 		switch(choice){
 			case 0:
-				System,out.printlln(name + " casts a spell!");
+				System.out.printlln(name + " casts a spell!");
 				return spellAttack();
 			case 1:
 				System.out.println(name + " swings thier sword !");
