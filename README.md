@@ -222,4 +222,17 @@ classDiagram
 -Makefile-
     javac *.java
     java GameEngine
+
+-How to Play-
+    -Start a new game and enter your name. 
+    -Explore to battle wild slimes.
+    -Use the Inventory to heal your slimes with potions.
+    -Use Rest to recover HP.
+    -Save your progress at any time. 
+
+-Future Improvments-
+    Add damage multipliers depending on type matchup. (Would allow the active slime to be different elements.
+    Add a leveling system for the player and slime.
+    Add a shop.
+    Add multiple save slots (Ambitious) 
 ```
