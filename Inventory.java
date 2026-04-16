@@ -13,7 +13,7 @@ public class Inventory implements Serializable{
     }
 
     public boolean usePotion(Creature slime){
-        if (potion > 0){
+        if (potions > 0){
             potions--;
             slime.heal(20);
             return true;
