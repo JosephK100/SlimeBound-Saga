@@ -81,7 +81,7 @@ public class GameEngine{
 			case 1: return new FireSlime();
 			case 2: return new WaterSlime();
 			case 3: return new AirSlime();
-			case 4: return new Slime();
+			default: return new Slime();
 		}
 	}
 	

@@ -1,5 +1,5 @@
 //ElementalType.java
 
-public enum ElementalType{
-	Fire, Water, Earth, Air, Electric;
+public enum ElementalType {
+    FIRE, WATER, EARTH, AIR, ELECTRIC;
 }

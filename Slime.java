@@ -8,7 +8,7 @@ public class Slime extends Creature{
 				20, //HP
 				5, //Attack
 				1, //Defense
-				ElementalType.Earth,
+				ElementalType.EARTH,
 				createMoves()
 		     );
 	}
