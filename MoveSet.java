@@ -23,6 +23,8 @@ public class MoveSet{
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Smack", 4));
 		set.addMove(new Move("Mud Bomb", 6));
+		set.addMove(new Move("Goo shot", 3));
+		set.addMove(new Move("Bounce", 5));
 		return set;
 	}
 
@@ -30,6 +32,7 @@ public class MoveSet{
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Fire Ball", 5));
 		set.addMove(new Move("Fire Storm", 7));
+		set.addMove(new Move("Flame Wheel", 6));
 		return set;
 	}
 
@@ -37,6 +40,7 @@ public class MoveSet{
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Splash", 4));
 		set.addMove(new Move("Jet Blast", 6));
+		set.addMove(new Move("Surf", 5));
 		return set;
 	}
 
@@ -44,6 +48,7 @@ public class MoveSet{
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Gust", 5));
 		set.addMove(new Move("Typhoon", 7));
+		set.addMove(new Move("Air Cutter", 3));
 		return set;
 	}
 }

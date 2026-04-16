@@ -9,14 +9,15 @@ public class Slime extends Creature{
 				5, //Attack
 				1, //Defense
 				ElementalType.EARTH,
-				createMoves()
+				MoveSet.basicSlimeMoves()
 		     );
 	}
-
+	/*These are outdated moves.
 	private static MoveSet createMoves(){
 		MoveSet set = new MoveSet();
 		set.addMove(new Move("Smack", 4));
 		set.addMove(new Move("Mud bomb", 6));
 		return set;
 	}
+	*/
 }

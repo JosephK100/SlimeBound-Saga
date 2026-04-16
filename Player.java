@@ -63,9 +63,25 @@ public class Player{
 		return 6;
 	}
 
+	public int frostShard(){
+		return 10;
+	}
+
+	public int thunderStrike(){
+		return 12;
+	}
+
+	public int lightBeam(){
+		return 7;
+	}
+
+	public int shadwoSlash(){
+		return 11;
+	}
+
 	public int randomAttack(){
 		Random rand = new Random();
-		int choice = rand.nextInt(3);
+		int choice = rand.nextInt(7);
 
 		switch(choice){
 			case 0:
@@ -76,11 +92,23 @@ public class Player{
 				return swordAttack();
 			case 2: System.out.println(name + " shoots an arrow!");
 				return bowAttack();
+			case 3:
+				System.out.println(name + " conjures a hailstorm!");
+				return frostShard();
+			case 4:
+				System.out.println(name + " unleashes thunder bolt!");
+				return thunderStrike();
+			case 5:
+				System.out.println(name + " uses light beam!");
+				return lightBeam();
+			case 6:
+				System.out.println(name + "uses shadow slash!");
+				return shadwoSlash();
 		}
 		//Just in case
 		return bowAttack();
 	}
-	
+
 	public Inventory getInventory(){
 		return inventory;
 	}
