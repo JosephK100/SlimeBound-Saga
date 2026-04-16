@@ -103,7 +103,7 @@ public class Player implements Serializable{
 				System.out.println(name + " uses light beam!");
 				return lightBeam();
 			case 6:
-				System.out.println(name + "uses shadow slash!");
+				System.out.println(name + " uses shadow slash!");
 				return shadwoSlash();
 		}
 		//Just in case
